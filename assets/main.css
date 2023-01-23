@@ -1,0 +1,50 @@
+:root {
+  --background: #000;
+  --paragraph: #333;
+  --title: #FFF;
+  --button: #0047AB;
+  --button-light: #0053C0;
+  --action-button: #32CD32;
+  --important: #FFD700;
+  --block: #F2F2F2;
+  background: var(--background);
+  color: var(--title);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+header {
+  padding: 8px 12px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  column-gap: 8px;
+  margin-top: 8px;
+}
