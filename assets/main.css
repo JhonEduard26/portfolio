@@ -1,9 +1,10 @@
 :root {
-  --background: #000;
-  --paragraph: #333;
-  --title: #FFF;
-  --button: #0047AB;
-  --button-light: #0053C0;
+  --background: #1c2131;
+  --title: #f6f7f8;
+  --paragraph: #e1e3e5;
+  --highlight: #00d0ff;
+  --button: #008bf5;
+  --button-alt: #0014f5;
   --action-button: #32CD32;
   --important: #FFD700;
   --block: #F2F2F2;
@@ -24,6 +25,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
 html {
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
@@ -34,6 +39,7 @@ body {
 }
 
 header {
+  margin-top: 24px;
   padding: 8px 12px;
 }
 
@@ -47,4 +53,25 @@ header ul {
   display: flex;
   column-gap: 8px;
   margin-top: 8px;
+}
+.about {
+  height: calc(100vh - 120px);
+  padding: 8px 24px;
+  text-align: center;
+}
+.about-title, .about-description {
+  margin-bottom: 12px;
+}
+.about-title {
+  display: inline-block;
+  color: var(--title);
+  border-bottom: 2px solid var(--highlight);
+}
+.about-description {
+  color: var(--paragraph);
+}
+.inline-button {
+  display: inline-flex;
+  color: var(--title);
+  border-bottom: 2px solid var(--highlight);
 }
