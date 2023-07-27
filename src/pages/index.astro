@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="JhonEduard26 | Portfolio">
@@ -17,42 +17,42 @@ import Header from '../components/Header.astro';
 			</picture>
 			<article>
 				<h1 class="title">Hola, Bienvenido <span style="display: block;">Soy JhonEduard26</span></h1>
-				<h2 class="text-gradient subtitle">Desarrollador Frontend</h2>
-				<p class="paragraph">
-					Apasionado desarrollador web Full Stack autodidacta y freelancer de Colombia.
-					Mi pasión por el software radica en idear cosas y hacerlas realidad con elegantes interfaces.
-					Pongo mucho cuidado en la experiencia, arquitectura y calidad del código de las cosas que construyo.
-				</p>
+				<h2 class="accent-text title">Desarrollador Frontend</h2>
 			</article>
 		</section>
+		<section class="section section-about">
+			<h2 class="title">Acerca de mi</h2>
+			<p class="paragraph">
+				Apasionado desarrollador web Full Stack autodidacta y freelancer de Colombia.
+				Mi pasión por el software radica en idear cosas y hacerlas realidad con elegantes interfaces.
+				Pongo mucho cuidado en la experiencia, arquitectura y calidad del código de las cosas que construyo.
+			</p>
+		</section>
 	</main>
+	<Footer />
 </Layout>
 
 <style>
 	main {
-		max-width: 120ch;
-		margin: auto;
 		padding-top: 80px;
 	}
 	section {
 		min-height: 100dvh;
 		padding: 2.4rem;
-		border-bottom: 2px solid #010f11;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
 	}
 	.profile-img {
 		max-width: 100%;
 	}
 	@media (width >= 768px) {
+		main {
+			max-width: 120ch;
+			margin: auto;
+			padding-top: 80px;
+		}	
 		.section-home {
 				display: grid;
-				grid-template-columns: 60% 40%;
-				column-gap: 3.6rem;
-				/* align-content: center; */
+				grid-template-columns: 3fr 2fr;
+				column-gap: 1.2rem;
 		}
 		.section-home > picture {
 			order: 1;
