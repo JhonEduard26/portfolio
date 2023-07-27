@@ -7,32 +7,60 @@ import Header from '../components/Header.astro';
 <Layout title="JhonEduard26 | Portfolio">
 	<Header />
 	<main>
+		<section class="section section-home" id="home">
+			<picture>
+				<img
+					class="profile-img"
+					src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+					alt="profile photo"
+				>
+			</picture>
+			<article>
+				<h1 class="title">Hola, Bienvenido <span style="display: block;">Soy JhonEduard26</span></h1>
+				<h2 class="text-gradient subtitle">Desarrollador Frontend</h2>
+				<p class="paragraph">
+					Apasionado desarrollador web Full Stack autodidacta y freelancer de Colombia.
+					Mi pasión por el software radica en idear cosas y hacerlas realidad con elegantes interfaces.
+					Pongo mucho cuidado en la experiencia, arquitectura y calidad del código de las cosas que construyo.
+				</p>
+			</article>
+		</section>
 	</main>
 </Layout>
 
 <style>
 	main {
+		max-width: 120ch;
 		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		min-height: 100dvh;
-		background-color: purple;
-		font-size: 2rem;
-		line-height: 1.6;
+		padding-top: 80px;
 	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
+	section {
+		min-height: 100dvh;
+		padding: 2.4rem;
+		border-bottom: 2px solid #010f11;
 	}
 	.text-gradient {
-		/* background-image: var(--accent-gradient); */
+		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	}
+	.profile-img {
+		max-width: 100%;
+	}
+	@media (width >= 768px) {
+		.section-home {
+				display: grid;
+				grid-template-columns: 60% 40%;
+				column-gap: 3.6rem;
+				/* align-content: center; */
+		}
+		.section-home > picture {
+			order: 1;
+			margin-top: 20%;
+		}
+		.section-home article .title,
+		.section-home article .subtitle {
+			text-align: left;
+		}
 	}
 </style>
