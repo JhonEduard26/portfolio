@@ -1,66 +1,118 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+
+import { projects } from "../data/projects.json";
 ---
 
 <Layout title="JhonEduard26 | Portfolio">
-	<Header />
-	<main>
-		<section class="section section-home" id="home">
-			<picture>
-				<img
-					class="profile-img"
-					src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-					alt="profile photo"
-				>
-			</picture>
-			<article>
-				<h1 class="title">Hola, Bienvenido <span style="display: block;">Soy JhonEduard26</span></h1>
-				<h2 class="accent-text title">Desarrollador Frontend</h2>
-			</article>
-		</section>
-		<section class="section section-about">
-			<h2 class="title">Acerca de mi</h2>
-			<p class="paragraph">
-				Apasionado desarrollador web Full Stack autodidacta y freelancer de Colombia.
-				Mi pasión por el software radica en idear cosas y hacerlas realidad con elegantes interfaces.
-				Pongo mucho cuidado en la experiencia, arquitectura y calidad del código de las cosas que construyo.
-			</p>
-		</section>
-	</main>
-	<Footer />
+  <Header />
+  <main>
+    <section class="section section-home" id="home">
+      <picture>
+        <img
+          class="profile-img"
+          src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="profile photo"
+        />
+      </picture>
+      <article>
+        <h1 class="title">
+          Hola, Bienvenido <span style="display: block;">Soy JhonEduard26</span>
+        </h1>
+        <h2 class="accent-text title">Desarrollador Frontend</h2>
+      </article>
+    </section>
+    <section class="section section-about" id="about">
+      <h2 class="title">Acerca de mi</h2>
+      <p class="paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sequi
+        alias iste autem omnis fugit impedit eius sint praesentium distinctio.
+        Est quod inventore doloribus culpa nihil voluptas ducimus facere
+        quisquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatibus delectus esse quod beatae, provident minima dolore quaerat
+        itaque vitae iure nostrum tempora, in magnam recusandae. Atque pariatur
+        molestiae amet repellat? Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Voluptates quasi corrupti neque commodi architecto
+        nisi delectus rerum facere, aut nostrum animi maxime veritatis
+        dignissimos quae doloribus possimus expedita. Officia, non!
+      </p>
+    </section>
+    <section class="section section-portfolio" id="portfolio">
+      <h2 class="title">Portfolio</h2>
+      <p class="paragraph">Mis recientes proyectos</p>
+      <ul class="portfolio-container">
+        {
+          projects.map((project) => (
+            <Card
+              href={project.href}
+              title={project.title}
+              body={project.body}
+              imgSrc={project.imgSrc}
+            />
+          ))
+        }
+      </ul>
+    </section>
+    <section class="section section-contact" id="contact">
+      <h2 class="title">Contacto</h2>
+      <p class="paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam sequi
+        alias iste autem omnis fugit impedit eius sint praesentium distinctio.
+        Est quod inventore doloribus culpa nihil voluptas ducimus facere
+        quisquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatibus delectus esse quod beatae, provident minima dolore quaerat
+        itaque vitae iure nostrum tempora, in magnam recusandae. Atque pariatur
+        molestiae amet repellat? Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Voluptates quasi corrupti neque commodi architecto
+        nisi delectus rerum facere, aut nostrum animi maxime veritatis
+        dignissimos quae doloribus possimus expedita. Officia, non!
+      </p>
+    </section>
+  </main>
+  <Footer />
 </Layout>
 
 <style>
-	main {
-		padding-top: 80px;
-	}
-	section {
-		min-height: 100dvh;
-		padding: 2.4rem;
-	}
-	.profile-img {
-		max-width: 100%;
-	}
-	@media (width >= 768px) {
-		main {
-			max-width: 120ch;
-			margin: auto;
-			padding-top: 80px;
-		}	
-		.section-home {
-				display: grid;
-				grid-template-columns: 3fr 2fr;
-				column-gap: 1.2rem;
-		}
-		.section-home > picture {
-			order: 1;
-			margin-top: 20%;
-		}
-		.section-home article .title,
-		.section-home article .subtitle {
-			text-align: left;
-		}
-	}
+  main {
+    padding-top: 80px;
+  }
+  .section {
+    min-height: 80dvh;
+    margin-top: 2.4rem;
+    padding: 2.4rem;
+  }
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+  } 
+  .profile-img {
+    max-width: 100%;
+  }
+  @media (width >= 768px) {
+    main {
+      max-width: 120ch;
+      margin: auto;
+      padding-top: 80px;
+    }
+    .section {
+      padding: 0;
+    }
+    .section-home {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      column-gap: 1.2rem;
+    }
+    .section-home > picture {
+      order: 1;
+      margin-top: 12%;
+    }
+    .section-home article .title,
+    .section-home article .subtitle {
+      text-align: left;
+    }
+  }
 </style>

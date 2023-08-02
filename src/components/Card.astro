@@ -1,61 +1,78 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  href: string;
+  imgSrc: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, imgSrc } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
+  <img class="card-img" src={imgSrc} alt={title} />
+  <h3>
+    {title}
+  </h3>
+  <p>
+    {body}
+  </p>
+	<div class="buttons-container">
+			<a class="button-inline" href={href}>Sitio web <span>&rarr;</span></a>
+			<a class="button-inline" href="#">Conoce más</a>
+	</div>
+	
 </li>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
+  .link-card {
+		background-color: var(--card-bg);
 		border-radius: 8px;
+		padding: 1.2rem;
+  }
+	.card-img {
+		margin-bottom: 8px;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+	}
+  h3 {
+    margin: 0;
+    font-size: 2.2rem;
+		text-align: center;
+		color: var(--titles);
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+		color: var(--subtitles);
+  }
+	.buttons-container {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+	}
+	.button-inline {
+		display: inline-flex;
+		padding: 8px 12px;
+		border-radius: 4px;
+		background-color: var(--secondary);
 		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
+		transition: background-color 0.2s ease-in-out;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.button-inline:nth-child(even) {
+		background-color: var(--bg);
+		color: var(--titles);
+		outline: 2px solid var(--secondary);
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+	.button-inline:nth-child(even):hover {
+		background-color: var(--main);
 	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
+	.button-inline:hover {
+		background-color: var(--main);
+		color: white;
 	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
+	.button-inline > span {
+		margin-left: 4px;
 	}
+
 </style>

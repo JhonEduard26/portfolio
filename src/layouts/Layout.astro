@@ -21,46 +21,66 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   :root {
-    --main: #004e7a;
-    --alt: #0079a8;
-    --secondary: #00214d;
-    --tertiary: #66a5d1;
-    --alt-light: #b5daf2;
+    --main: #0077C2;
+    --secondary: #59a5f5;
+    --tertiary: #c8ffff;
+    --bg: #FFFFFF;
+    --card-bg: #f5f5f5;
+    --titles: #333333;
+    --subtitles: #5c5c5c;
   }
   html {
     font-family: system-ui, sans-serif;
     font-size: 62.5%;
+    scroll-behavior: smooth;
   }
   body {
     margin: 0;
     font-size: 1.6rem;
-		background-color: whitesmoke;
+		background-color: var(--bg);
   }
   ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
   a {
-    color: white;
+    color: black;
 		text-decoration: none;
+    transition: color 0.2s ease-in-out;
   }
   a:hover {
-    color: var(--tertiary);
+    color: var(--main);
+  }
+  img {
+    max-width: 100%;
   }
   .title {
     font-size: 4.6rem;
     font-weight: 800;
+    color: var(--titles);
     text-align: center;
   }
   .subtitle {
     text-align: center;
     font-size: 3.2rem;
+    color: var(--subtitles);
   }
   .paragraph {
     font-size: 2.4rem;
-    font-weight: 200;
+    font-weight: 300;
 		text-wrap: balance;
   }
+  .svg-icon {
+    width: 48px;
+    height: 48px;
+    fill: white;
+    transition: fill 0.2s ease-in-out;
+  }
+  .svg-icon:hover {
+    fill: black;
+  }
   .accent-text {
-    color: var(--secondary);
+    color: var(--main);
   }
 </style>
