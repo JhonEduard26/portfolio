@@ -4,31 +4,36 @@
       "href": "https://booky-app-react.netlify.app/",
       "title": "Booky App",
       "body": "Prueba tecnica aplicacion web de libros con lista de lectura",
-      "imgSrc": "https://github.com/JhonEduard26/booky-app/raw/main/src/assets/desktop.png"
+      "imgSrc": "https://github.com/JhonEduard26/booky-app/raw/main/src/assets/desktop.png",
+      "slugTitle": "booky-app"
     },
     {
       "href": "https://random-foxes.vercel.app/",
-      "title": "Random Fox Image Generator",
+      "title": "Random Foxes",
       "body": "Genera una imagen aleatoria de un zorro, las imagenes son lazy loading",
-      "imgSrc": "https://github.com/JhonEduard26/random-foxes/raw/main/public/fox.png"
+      "imgSrc": "https://github.com/JhonEduard26/random-foxes/raw/main/public/fox.png",
+      "slugTitle": "random-foxes"
     },
     {
       "href": "https://jhoneduard26.github.io/ecommerce-product-page/",
       "title": "Ecommerce Product Page",
       "body": "Página de productos con una galería lightbox y funcionalidad de carrito",
-      "imgSrc": "https://github.com/JhonEduard26/ecommerce-product-page/raw/main/assets/screenshots/desktop.jpeg"
+      "imgSrc": "https://github.com/JhonEduard26/ecommerce-product-page/raw/main/assets/screenshots/desktop.jpeg",
+      "slugTitle": "ecommerce-product-page"
     },
     {
       "href": "https://jhoneduard26.github.io/intro-section-with-dropdown-navigation/",
       "title": "Intro Section With Dropdown Navigation",
       "body": "Landing page con menús desplegables relevantes en escritorio y móvil",
-      "imgSrc": "https://github.com/JhonEduard26/intro-section-with-dropdown-navigation/raw/main/assets/screenshots/desktop.jpeg"
+      "imgSrc": "https://github.com/JhonEduard26/intro-section-with-dropdown-navigation/raw/main/assets/screenshots/desktop.jpeg",
+      "slugTitle": "intro-section-with-dropdown-navigation"
     },
     {
       "href": "https://jhoneduard26.github.io/todo-app/",
       "title": "ToDo App",
       "body": "Clásica aplicación de tareas pendientes. Incluye tema oscuro/claro y guarda las tareas en el local storage",
-      "imgSrc": "https://github.com/JhonEduard26/todo-app/raw/main/src/assets/screenshots/desktop.jpeg"
+      "imgSrc": "https://github.com/JhonEduard26/todo-app/raw/main/src/assets/screenshots/desktop.jpeg",
+      "slugTitle": "todo-app"
     }
   ]
 }

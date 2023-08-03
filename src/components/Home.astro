@@ -1,0 +1,33 @@
+<section class="section section-home" id="home">
+  <picture>
+    <img
+      class="profile-img"
+      src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="profile photo"
+    />
+  </picture>
+  <article>
+    <h1 class="title">
+      Hola, Bienvenido <span style="display: block;">Soy JhonEduard26</span>
+    </h1>
+    <h2 class="accent-text title">Desarrollador Frontend</h2>
+  </article>
+</section>
+
+<style>
+  @media (width >= 768px) {
+    .section-home {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      column-gap: 1.2rem;
+    }
+    .section-home > picture {
+      order: 1;
+      margin-top: 12%;
+    }
+    .section-home article .title,
+    .section-home article .subtitle {
+      text-align: left;
+    }
+  }
+</style>

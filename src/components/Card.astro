@@ -4,9 +4,10 @@ interface Props {
   body: string;
   href: string;
   imgSrc: string;
+	slugTitle: string
 }
 
-const { href, title, body, imgSrc } = Astro.props;
+const { href, title, body, imgSrc, slugTitle } = Astro.props;
 ---
 
 <li class="link-card">
@@ -18,8 +19,8 @@ const { href, title, body, imgSrc } = Astro.props;
     {body}
   </p>
 	<div class="buttons-container">
-			<a class="button-inline" href={href}>Sitio web <span>&rarr;</span></a>
-			<a class="button-inline" href="#">Conoce más</a>
+			<a class="button-inline" href={href} target="_blank">Sitio web <span>&rarr;</span></a>
+			<a class="button-inline" href={`portfolio/${slugTitle}`}>Conoce más</a>
 	</div>
 	
 </li>

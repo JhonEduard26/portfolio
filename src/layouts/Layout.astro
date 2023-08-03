@@ -1,4 +1,6 @@
 ---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 interface Props {
   title: string;
 }
@@ -16,7 +18,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -30,7 +34,7 @@ const { title } = Astro.props;
     --subtitles: #5c5c5c;
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
   }
@@ -68,8 +72,14 @@ const { title } = Astro.props;
   }
   .paragraph {
     font-size: 2.4rem;
-    font-weight: 300;
+    font-weight: 200;
 		text-wrap: balance;
+    color: var(--subtitles);
+  }
+  .section {
+    min-height: 80dvh;
+    margin-top: 2.4rem;
+    padding: 2.4rem;
   }
   .svg-icon {
     width: 48px;
@@ -82,5 +92,10 @@ const { title } = Astro.props;
   }
   .accent-text {
     color: var(--main);
+  }
+  @media (width >= 768px) {
+    .section {
+      padding: 0;
+    }
   }
 </style>

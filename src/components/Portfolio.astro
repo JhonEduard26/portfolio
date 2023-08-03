@@ -1,0 +1,33 @@
+---
+import Card from './Card.astro';
+import { projects } from '../data/projects.json'
+---
+
+<section class="section section-portfolio" id="portfolio">
+  <h2 class="title">Portfolio</h2>
+  <p class="paragraph">Mis recientes proyectos</p>
+  <ul class="portfolio-container">
+    {
+      projects.map((project) => (
+        <Card
+          href={project.href}
+          title={project.title}
+          body={project.body}
+          imgSrc={project.imgSrc}
+          slugTitle={project.slugTitle}
+        />
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+  }
+  .profile-img {
+    max-width: 100%;
+  }
+</style>
