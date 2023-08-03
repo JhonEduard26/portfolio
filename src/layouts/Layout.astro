@@ -93,9 +93,40 @@ const { title } = Astro.props;
   .accent-text {
     color: var(--main);
   }
-  @media (width >= 768px) {
+  @media (width > 768px) {
     .section {
       padding: 0;
     }
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .revealing-card {
+    /* Create View Timeline */
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
+
+    /* Attach animation, linked to the  View Timeline */
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+
+    /* Tweak range when effect should run*/
+    animation-range: entry 25% cover 50%;  
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  body {
+    animation: fadeIn 1.2s ease-in-out;
   }
 </style>

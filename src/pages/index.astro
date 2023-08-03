@@ -4,13 +4,14 @@ import Contact from "../components/Contact.astro";
 import Home from "../components/Home.astro";
 import Layout from "../layouts/Layout.astro";
 import Portfolio from "../components/Portfolio.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout title="JhonEduard26 | Portfolio">
-
   <main>
     <Home />
     <About />
+    <Skills />
     <Portfolio />
     <Contact />
   </main>
@@ -20,7 +21,7 @@ import Portfolio from "../components/Portfolio.astro";
   main {
     padding-top: 80px;
   }
-  @media (width >= 768px) {
+  @media (width > 768px) {
     main {
       max-width: 120ch;
       margin: auto;
